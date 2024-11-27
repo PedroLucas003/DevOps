@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = "ba041792daf2902748de400a4dbadba5";
 const apiCountryURL = "https://countryflagsapi.com/png/";
 const apiUnsplash = "https://source.unsplash.com/1600x900/?";
 
@@ -14,7 +14,6 @@ const umidityElement = document.querySelector("#umidity span");
 const windElement = document.querySelector("#wind span");
 
 const weatherContainer = document.querySelector("#weather-data");
-
 const errorMessageContainer = document.querySelector("#error-message");
 const loader = document.querySelector("#loader");
 
@@ -47,7 +46,6 @@ const showErrorMessage = () => {
 const hideInformation = () => {
   errorMessageContainer.classList.add("hide");
   weatherContainer.classList.add("hide");
-
   suggestionContainer.classList.add("hide");
 };
 
@@ -72,7 +70,7 @@ const showWeatherData = async (city) => {
   umidityElement.innerText = `${data.main.humidity}%`;
   windElement.innerText = `${data.wind.speed}km/h`;
 
-  // Change bg image
+  // Alterar imagem de fundo
   document.body.style.backgroundImage = `url("${apiUnsplash + city}")`;
 
   weatherContainer.classList.remove("hide");
@@ -82,14 +80,12 @@ searchBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   const city = cityInput.value;
-
   showWeatherData(city);
 });
 
 cityInput.addEventListener("keyup", (e) => {
   if (e.code === "Enter") {
     const city = e.target.value;
-
     showWeatherData(city);
   }
 });
@@ -98,7 +94,6 @@ cityInput.addEventListener("keyup", (e) => {
 suggestionButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const city = btn.getAttribute("id");
-
     showWeatherData(city);
   });
 });
