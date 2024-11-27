@@ -16,3 +16,5 @@ export default function () {
   sleep(1); // Pausa de 1 segundo entre as requisições
 }
 
+
+Para rodar o projeto, so usar o Live Server do VsCode...
